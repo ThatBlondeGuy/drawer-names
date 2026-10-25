@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+group = 'com.thatblondeguy.drawernames'
+version = '1.0.0'
+
+base {
+    archivesName = 'drawernames'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+// Compile-time only: the mods this add-on hooks into. Point -PmodsDir at any folder holding them.
+def modsDir = findProperty('modsDir') ?: "${System.getProperty('user.home')}/.local/share/PrismLauncher/instances/FTB Evolution/.minecraft/mods"
+
+neoForge {
+    version = '21.1.248'
+
+    mods {
+        drawernames {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+dependencies {
+    compileOnly fileTree(dir: modsDir, include: ['Jade-1.21.1-NeoForge-*.jar', 'functionalstorage-1.21.1-*.jar', 'titanium-1.21-*.jar'])
+}

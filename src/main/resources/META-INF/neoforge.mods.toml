@@ -1,0 +1,31 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "drawernames"
+version = "1.0.0"
+displayName = "Drawer Names for Jade"
+authors = "ThatBlondeGuy"
+description = '''Adds the item name to the Jade tooltip of Functional Storage drawers, which otherwise show only icons and counts.'''
+
+[[dependencies.drawernames]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.drawernames]]
+modId = "jade"
+type = "required"
+versionRange = "[15,)"
+ordering = "AFTER"
+side = "CLIENT"
+
+[[dependencies.drawernames]]
+modId = "functionalstorage"
+type = "required"
+versionRange = "[1.5,)"
+ordering = "AFTER"
+side = "BOTH"
